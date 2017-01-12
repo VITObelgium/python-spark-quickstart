@@ -23,7 +23,7 @@ products = Catalog().get_products('PROBAV_L3_S5_TOC_100M', 'GEOTIFF',
 
 files = ndvi_files(products)
 
-sc = SparkContext('local', 'python-spark-quickstart')
+sc = SparkContext('local[*]', 'python-spark-quickstart')
 
 try:
     hists = sc.parallelize(files).map(histogram)
