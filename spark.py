@@ -11,7 +11,7 @@ if __name__ == '__main__':
                        start_date=datetime(2016, 1, 1), end_date=datetime(2016, 2, 1),
                        min_lon=2.5, max_lon=6.5, min_lat=49.5, max_lat=51.5)
 
-    sc = SparkContext('local[*]', 'python-spark-quickstart')
+    sc = SparkContext(appName='python-spark-quickstart')
 
     try:
         hists = sc.parallelize(files).map(histogram)
