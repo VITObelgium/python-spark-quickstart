@@ -1,0 +1,5 @@
+#!/bin/sh
+
+python setup.py bdist_egg && \
+spark-submit --master yarn-cluster --num-executors 4 --py-files dist/python_spark_quickstart-0.1-py2.7.egg spark.py
+
