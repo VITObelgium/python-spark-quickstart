@@ -7,7 +7,7 @@ from histogram.histogram import histogram
 from pyspark import SparkContext
 
 if __name__ == '__main__':
-    files = ndvi_files('PROBAV_L3_S5_TOC_100M',
+    files = ndvi_files('PROBAV_L3_S1_TOC_333M',
                        start_date=datetime(2016, 1, 1), end_date=datetime(2016, 2, 1),
                        min_lon=2.5, max_lon=6.5, min_lat=49.5, max_lat=51.5)
 
