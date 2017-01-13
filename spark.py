@@ -14,9 +14,10 @@ if __name__ == '__main__':
     sc = SparkContext(appName='python-spark-quickstart')
 
     try:
-        hists = sc.parallelize(files).map(histogram)
-        sum = hists.reduce(lambda h, i: map(add, h, i))
+        hists = sc.parallelize(files).map(histogram).cache()
+        count = hists.count()
+        total = hists.reduce(lambda h, i: map(add, h, i))
 
-        print sum
+        print "sum of %i histograms: %s" % (count, total)
     finally:
         sc.stop()
