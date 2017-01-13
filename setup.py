@@ -7,5 +7,5 @@ setup(name='python-spark-quickstart',
       author_email='jan.van.den.bosch@devoteam.com',
       packages=find_packages(),
       setup_requires=['numpy'],
-      install_requires=['numpy', 'rasterio', 'catalogclient'])
+      install_requires=['numpy', 'rasterio==0.36', 'catalogclient'])
 
