@@ -14,11 +14,18 @@ Run the 'run-local' bash script on the command line for a local test run.
 Both methods will use the local cpu's of your system. 
 ## On the Hadoop cluster
 ### Log into Hadoop
+Run 'kinit' and provide your MEP password. (Same as VM/portal.)
 kinit
 ### Submit your job on Hadoop
-(TODO)
+Run the run-cluster script.
+Inside this script, you can adjust options such as '--num-executors' to specify the number of parallel executors to use.
 ### Using the Spark UI to inspect the running job
-### View job logs Hadoop
 (TODO)
+### View job logs Hadoop
+As your job now runs on remote servers, the output generated there is not directly visible. You can retrieve the full logs like this:
+
+Find the application id, it is printed in the console output of the Spark job.
+Run:
+yarn logs -applicationId application_xxxxx
 
 
