@@ -4,7 +4,11 @@ For each PROBA-V tile in a given bounding box and time range, a histogram is com
 
 # Development environment setup
 
-PyCharm integration: http://stackoverflow.com/a/34714207/1158374 (note: use absolute paths in PYTHONPATH)
+PyCharm integration: http://stackoverflow.com/a/34714207/1158374
+
+Note: at least PyCharm Community Edition 2016.2.3 requires that you expand `SPARK_HOME` yourself, so `PYTHONPATH` becomes:
+
+`/path/to/the/spark/directory/python:/path/to/the/spark/directory/python/lib/py4j-some-version.src.zip`
 
 # Running the code
 ## Locally
