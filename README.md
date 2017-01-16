@@ -1,6 +1,6 @@
 This code sample shows how to use Spark (http://spark.apache.org/) for distributed processing on the PROBA-V Mission Exploitation Platform. (https://proba-v-mep.esa.int/)
 The sample intentionally implements a very simple computation:
-For each PROBA-V tile in a given bounding box and time range, a histogram is computed, the results are then printed. Computation of the histograms runs in parallel.
+for each PROBA-V tile in a given bounding box and time range, a histogram is computed. The results are then summed and printed. Computation of the histograms runs in parallel.
 
 # Development environment setup
 
