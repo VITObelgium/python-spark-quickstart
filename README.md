@@ -24,7 +24,13 @@ kinit
 Run the run-cluster script.
 Inside this script, you can adjust options such as '--num-executors' to specify the number of parallel executors to use.
 ### Using the Spark UI to inspect the running job
-(TODO)
+Use X2Go Client to start a remote desktop session with your VM; run Firefox and navigate to the job's tracking URL printed in
+Spark's console output, e.g:
+[http://epod6.vgt.vito.be:8088/proxy/application_1484394506558_0055](http://epod6.vgt.vito.be:8088/proxy/application_1484394506558_0055).
+
+An overview of the jobs submitted to the cluster is available at
+[http://epod6.vgt.vito.be:8088/cluster](http://epod6.vgt.vito.be:8088/cluster).
+
 ### View job logs Hadoop
 As your job now runs on remote servers, the output generated there is not directly visible. You can retrieve the full logs like this:
 
