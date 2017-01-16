@@ -30,7 +30,7 @@ Additional Python dependencies as `.zip`, `.egg` or `.py` files can be appended 
 ### View job logs Hadoop
 As your job now runs on remote servers, the output generated there is not directly visible. You can retrieve the full logs like this:
 
-Find the application ID: it is printed in the console output of the Spark jobn, for example `application_1484394506558_0055`. Then run:
+Find the application ID: it is printed in the console output of the Spark job, for example `application_1484394506558_0055`. Then run:
 `yarn logs -applicationId application_1484394506558_0055`
 
 ### Using the Spark UI to inspect the running job
