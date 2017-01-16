@@ -1,4 +1,7 @@
-"""spark.py"""
+"""
+This sample program uses Apache Spark to calculate a histogram for each PROBA-V tile within a given time range and
+bounding box and sums them up - all in parallel.
+"""
 
 from datetime import datetime
 from operator import add
