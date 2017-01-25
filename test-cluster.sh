@@ -5,7 +5,8 @@ EXPECTED="sum of 32 histograms: [13987347, 444344, 464807, 494154, 527579, 55597
 APPLICATION_ID=$(sh run-cluster 2>&1 >/dev/null | grep 'Submitted application' | awk '{print $NF}')
 ACTUAL=$(yarn logs -applicationId $APPLICATION_ID | grep 'sum of')
 
-echo -e "expected: $EXPECTED,\nactual: $ACTUAL"
-
-test "$EXPECTED" = "$ACTUAL"
+if [ "$EXPECTED" != "$ACTUAL" ]; then
+  echo -e "expected: $EXPECTED,\nactual: $ACTUAL"
+  exit 1
+fi
 
