@@ -1,4 +1,4 @@
 #!/bin/sh
 
-spark-submit --master local[*] spark.py
+spark-submit --master local[*] --conf spark.driver.bindAddress=127.0.0.1 spark.py
 

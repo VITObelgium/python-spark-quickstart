@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(name='python-spark-quickstart',
-      version='0.1',
+      version='0.2',
       url='https://proba-v-mep.esa.int',
       author="Jan Van den bosch",
       author_email='jan.van.den.bosch@devoteam.com',

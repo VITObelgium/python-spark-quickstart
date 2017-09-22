@@ -32,8 +32,8 @@ if __name__ == '__main__':
         #Count number of histograms
         count = hists.count()
         #Combine distributed histograms into a single result
-        total = hists.reduce(lambda h, i: map(add, h, i))
+        total = list(hists.reduce(lambda h, i: map(add, h, i)))
 
-        print "sum of %i histograms: %s" % (count, total)
+        print( "sum of %i histograms: %s" % (count, total) )
     finally:
         sc.stop()
