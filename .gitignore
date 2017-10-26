@@ -2,3 +2,4 @@
 *.pyc
 dist/
 python_spark_quickstart.egg-info/
+build/
