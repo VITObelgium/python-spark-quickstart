@@ -1,3 +1,3 @@
 #!/bin/sh
 zip -r histogram.zip histogram/ && \
-spark-submit --master yarn-cluster --conf spark.shuffle.service.enabled=true --conf spark.dynamicAllocation.enabled=true --files log4j.properties --py-files histogram.zip spark.py
+spark-submit --master yarn-cluster --conf spark.shuffle.service.enabled=true --conf spark.dynamicAllocation.enabled=true --py-files histogram.zip spark.py
