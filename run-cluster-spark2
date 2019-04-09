@@ -4,4 +4,7 @@
 export SPARK_MAJOR_VERSION=2
 export SPARK_HOME=/usr/hdp/current/spark2-client
 zip -r histogram.zip histogram/ && \
-spark-submit --master yarn-cluster --conf spark.shuffle.service.enabled=true --conf spark.dynamicAllocation.enabled=true --conf spark.yarn.appMasterEnv.SPARK_HOME=/usr/hdp/current/spark2-client --py-files histogram.zip spark.py
+spark-submit --master yarn --deploy-mode cluster \
+--conf spark.shuffle.service.enabled=true --conf spark.dynamicAllocation.enabled=true \
+--conf spark.yarn.appMasterEnv.SPARK_HOME=/usr/hdp/current/spark2-client  \
+--py-files histogram.zip spark.py
