@@ -1,4 +1,5 @@
 #!/bin/sh
-
+export SPARK_MAJOR_VERSION=2
+export SPARK_HOME=/usr/hdp/current/spark2-client
 spark-submit --master local[*] --conf spark.driver.bindAddress=127.0.0.1 --conf spark.eventLog.enabled=false spark.py
 
