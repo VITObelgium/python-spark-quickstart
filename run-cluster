@@ -1,10 +1,7 @@
 #!/bin/sh
-#Runs your script on the cluster using spark2. 
+#Runs your script on the cluster using spark2 and Python 3. 
 #This requires to export the 2 environment variables below, and to add --conf spark.yarn.appMasterEnv.SPARK_HOME=/usr/hdp/current/spark2-client to your spark-submit
-export SPARK_MAJOR_VERSION=2
-export SPARK_HOME=/usr/hdp/current/spark2-client
-zip -r histogram.zip histogram/ && \
+#For Python 3 we need to set HDP_VERSION, and PYSPARK_PYTHON
+zip -r histogram.zip histogram/
 spark-submit --master yarn --deploy-mode cluster \
---conf spark.shuffle.service.enabled=true --conf spark.dynamicAllocation.enabled=true \
---conf spark.yarn.appMasterEnv.SPARK_HOME=/usr/hdp/current/spark2-client  \
 --py-files histogram.zip spark.py

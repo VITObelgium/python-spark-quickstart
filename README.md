@@ -36,9 +36,9 @@ Find the application ID: it is printed in the console output of the Spark job, f
 ### Using the Spark UI to inspect the running job
 Use X2Go Client to start a remote desktop session with your VM; run Firefox and navigate to the job's tracking URL printed in
 Spark's console output, e.g:
-[http://epod-master1.vgt.vito.be:8088/proxy/application_1484394506558_0055](http://epod-master1.vgt.vito.be:8088/proxy/application_1484394506558_0055).
+[https://epod-master1.vgt.vito.be:8090/proxy/application_1484394506558_0055](https://epod-master1.vgt.vito.be:8090/proxy/application_1484394506558_0055).
 
 An overview of the jobs submitted to the cluster is available at
-[http://epod-master1.vgt.vito.be:8088/cluster](http://epod-master1.vgt.vito.be:8088/cluster).
+[https://epod-master1.vgt.vito.be:8090/cluster](https://epod-master1.vgt.vito.be:8090/cluster).
 
 
