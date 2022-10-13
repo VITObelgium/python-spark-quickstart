@@ -1,8 +1,8 @@
 #!/bin/sh
-#Runs your script on the cluster using spark2 and Python 3. 
-#This requires to export the 2 environment variables below, and to add --conf spark.yarn.appMasterEnv.SPARK_HOME=/usr/hdp/current/spark2-client to your spark-submit
-#For Python 3 we need to set HDP_VERSION, and PYSPARK_PYTHON
 export SPARK_HOME=/opt/spark3_2_0/
-zip -r histogram.zip histogram/
-/opt/spark3_2_0/bin/spark-submit --master yarn --deploy-mode cluster \
---py-files histogram.zip spark.py
+pyspark_python="./env/bin/python"
+${SPARK_HOME}/bin/spark-submit --master yarn --deploy-mode cluster \
+--conf spark.yarn.executorEnv.PYSPARK_PYTHON=$pyspark_python \
+--conf spark.yarn.appMasterEnv.PYSPARK_PYTHON=$pyspark_python \
+--archives hdfs://hacluster/spark3_sample/spark3_example.tar.gz#env \
+spark-pi.py

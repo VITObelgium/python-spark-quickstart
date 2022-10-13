@@ -36,9 +36,28 @@ Find the application ID: it is printed in the console output of the Spark job, f
 ### Using the Spark UI to inspect the running job
 Use X2Go Client to start a remote desktop session with your VM; run Firefox and navigate to the job's tracking URL printed in
 Spark's console output, e.g:
-[https://epod-master1.vgt.vito.be:8090/proxy/application_1484394506558_0055](https://epod-master1.vgt.vito.be:8090/proxy/application_1484394506558_0055).
+[http://epod-master1.vgt.vito.be:8088/proxy/application_1484394506558_0055](http://epod-master1.vgt.vito.be:8088/proxy/application_1484394506558_0055).
 
 An overview of the jobs submitted to the cluster is available at
-[https://epod-master1.vgt.vito.be:8090/cluster](https://epod-master1.vgt.vito.be:8090/cluster).
+[http://epod-master1.vgt.vito.be:8088/cluster](http://epod-master1.vgt.vito.be:8088/cluster).
 
+# Spark 3 support
+## Python3.8
+Python3.8 no longer supports spark 2.4. This means if you have python3.8 code, Spark 3 will have to be used.
+Spark 3.2 is available under `/opt/spark3_2_0/` on your userVM.
 
+## Getting an environment
+Since the Hadoop cluster does not have Python 3.8 installed by default, your own environment will have to be created. This environment will need to have the Python 3.8 binaries as well as the required libraries installed (as those are also not available on the epods).
+The preferred way to achieve this is by using conda and conda-pack to package your environment as venv and venv-pack will not package Python 3.8 binaries and only install the Python 3.8 packages you install inside the virtual environment.
+More information on how to get a conda environment packages for Spark [can be found here](https://conda.github.io/conda-pack/spark.html)
+
+For our example, a simple environment where only numpy is installed as an extra package is used. The package is located on HDFS at `hdfs://hacluster/spark3_sample/spark3_example.tar.gz`. This package was created by performing:
+`conda create -y -n spark3_example python=3.8 numpy`
+`conda activate spark3_example`
+`conda pack -o spark3_example.tar.gz`
+
+The spark-submit command is located at `run-cluster-spark3`.
+The configuration of note is:
+* Setting `SPARK_HOME`
+* Setting `PYSPARK_PYTHON`
+* Adding the environment using `--archives`
