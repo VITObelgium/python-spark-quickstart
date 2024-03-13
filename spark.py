@@ -17,7 +17,7 @@ if __name__ == '__main__':
     """
     Query the PROBA-V files that will be processed. This method returns a simple list of files that match a specific time range and bounding box.
     """
-    files = ndvi_files('PROBAV_L3_S1_TOC_333M',
+    files = ndvi_files('urn:eop:VITO:PROBAV_S1_TOC_333M_COG_V2',
                        start_date=datetime(2016, 1, 1), end_date=datetime(2016, 2, 1),
                        min_lon=2.5, max_lon=6.5, min_lat=49.5, max_lat=51.5)
 
